@@ -30,6 +30,7 @@ var quizQuestions = [
   var answerEl = document.getElementById("answer");
   var scoreEl = document.getElementById("score");
   var initialsEl = document.getElementById("initials");
+  var timer =document.getElementById("timer");
 
   let currentQuestionIndex = 0;
   let timeLeft = 60;
@@ -43,9 +44,11 @@ var quizQuestions = [
   }
 
   function startTimer() {
+    
     timerId = setInterval(function() {
+      timer.innerHTML=timeLeft
       timeLeft--;
-      if (timeLeft === 0) {
+      if (timeLeft <= 0) {
         endQuiz();
       }
     }, 1000);

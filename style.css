@@ -17,6 +17,15 @@ header {
     color: blue;
   }
 
+  #timer{
+    color:black
+  }
+
   #save-btn{
     color: blue;
   }
+
+  p {
+    color: rgb(38, 240, 38)
+  }
+
