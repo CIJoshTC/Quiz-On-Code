@@ -56,6 +56,7 @@ var quizQuestions = [
     quizContainer.style.display = "block";
     showQuestion();
     startTimer();
+    
   }
 
   function checkAnswer() {
