@@ -1,0 +1,22 @@
+header {
+    padding: 40px;
+    text-align: center;
+    background: #0b2fd3;
+    color: #e8dfbf;
+  }
+
+  #quiz-container {
+    color: #0b2fd3;
+  }
+  
+  #score-container{
+    color: #0b2fd3;
+  }
+
+  #start-btn{
+    color: blue;
+  }
+
+  #save-btn{
+    color: blue;
+  }

@@ -85,9 +85,18 @@ var quizQuestions = [
     scoreContainer.style.display = "block";
     scoreEl.textContent = score;
   }
+  function saveScore() {
+    var initials = initialsEl.value.trim();
+    var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+    highScores.push({ initials, score });
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+    window.location.href = "high-scores.html";
+  }
 
 
 
 
   startBtn.addEventListener("click", startQuiz);
   submitBtn.addEventListener("click", checkAnswer);
+  saveBtn.addEventListener("click", saveScore );
