@@ -41,3 +41,25 @@ var quizQuestions = [
     var question = quizQuestions[currentQuestionIndex];
     questionEl.textContent = question.question;
   }
+
+  function startTimer() {
+    timerId = setInterval(function() {
+      timeLeft--;
+      if (timeLeft === 0) {
+        endQuiz();
+      }
+    }, 1000);
+  }
+
+  function startQuiz() {
+    startBtn.style.display = "none";
+    quizContainer.style.display = "block";
+    showQuestion();
+    startTimer();
+  }
+
+
+
+
+
+  startBtn.addEventListener("click", startQuiz);
