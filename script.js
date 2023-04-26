@@ -30,3 +30,14 @@ var quizQuestions = [
   var answerEl = document.getElementById("answer");
   var scoreEl = document.getElementById("score");
   var initialsEl = document.getElementById("initials");
+
+  let currentQuestionIndex = 0;
+  let timeLeft = 60;
+  let score = 0;
+  let timerId;
+
+
+  function showQuestion() {
+    var question = quizQuestions[currentQuestionIndex];
+    questionEl.textContent = question.question;
+  }
