@@ -89,3 +89,4 @@ var quizQuestions = [
 
 
   startBtn.addEventListener("click", startQuiz);
+  submitBtn.addEventListener("click", checkAnswer);
