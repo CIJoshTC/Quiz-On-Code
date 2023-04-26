@@ -58,6 +58,32 @@ var quizQuestions = [
     startTimer();
   }
 
+  function checkAnswer() {
+    var question = quizQuestions[currentQuestionIndex];
+    var userAnswer = answerEl.value.trim().toLowerCase();
+
+    if (userAnswer === question.answer.toLowerCase()) {
+      score++;
+    } else {
+      timeLeft -= 10;
+    }
+
+    answerEl.value = "";
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex === quizQuestions.length) {
+      endQuiz();
+    } else {
+      showQuestion();
+    }
+  }
+  function endQuiz() {
+    clearInterval(timerId);
+    quizContainer.style.display = "none";
+    scoreContainer.style.display = "block";
+    scoreEl.textContent = score;
+  }
 
 
 
