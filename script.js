@@ -16,7 +16,7 @@ var quizQuestions = [
         answer: "parenthesis"
     },
     {
-        question: "where should java code be linked",
+        question: "where should javascript code be linked",
         answer: "html body"
     }
   ];
@@ -32,14 +32,14 @@ var quizQuestions = [
   var initialsEl = document.getElementById("initials");
   var timer =document.getElementById("timer");
 
-  let currentQuestionIndex = 0;
+  let QuestionIndex = 0;
   let timeLeft = 60;
   let score = 0;
   let timerId;
 
 
   function showQuestion() {
-    var question = quizQuestions[currentQuestionIndex];
+    var question = quizQuestions[QuestionIndex];
     questionEl.textContent = question.question;
   }
 
@@ -63,7 +63,7 @@ var quizQuestions = [
   }
 
   function checkAnswer() {
-    var question = quizQuestions[currentQuestionIndex];
+    var question = quizQuestions[QuestionIndex];
     var userAnswer = answerEl.value.trim().toLowerCase();
 
     if (userAnswer === question.answer.toLowerCase()) {
@@ -74,9 +74,9 @@ var quizQuestions = [
 
     answerEl.value = "";
 
-    currentQuestionIndex++;
+    QuestionIndex++;
 
-    if (currentQuestionIndex === quizQuestions.length) {
+    if (QuestionIndex === quizQuestions.length) {
       endQuiz();
     } else {
       showQuestion();
@@ -91,15 +91,22 @@ var quizQuestions = [
   function saveScore() {
     var initials = initialsEl.value.trim();
     var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    scoresList.innerHTML = "";
+
+    highScores.forEach(function(score) {
+      var li = document.createElement("li");
+      li.textContent = score.initials + " - " + score.score;
+      scoresList.appendChild(li);
+    });
+  
+
 
     highScores.push({ initials, score });
     localStorage.setItem("highScores", JSON.stringify(highScores));
-    window.location.href = "high-scores.html";
+     
   }
-
-
-
 
   startBtn.addEventListener("click", startQuiz);
   submitBtn.addEventListener("click", checkAnswer);
   saveBtn.addEventListener("click", saveScore );
+ 

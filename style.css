@@ -1,31 +1,33 @@
 header {
     padding: 40px;
     text-align: center;
-    background: #0b2fd3;
-    color: #e8dfbf;
+    background-color: #83d4f4;
+    color: #efc52c;
   }
 
   #quiz-container {
-    color: #0b2fd3;
+    color: #83d4f4;
   }
   
   #score-container{
-    color: #0b2fd3;
+    color: black
   }
 
   #start-btn{
-    color: blue;
+    color: black
   }
 
   #timer{
-    color:black
+    color:black;
+    font-size: 30px;
+    font-weight: 900;
   }
 
   #save-btn{
-    color: blue;
+    color: orangered
   }
 
   p {
-    color: rgb(38, 240, 38)
+    color: rgb(0, 0, 0)
   }
 
